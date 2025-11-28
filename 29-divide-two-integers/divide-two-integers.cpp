@@ -8,12 +8,12 @@ public:
         if(divisor<0&&dividend>0) sign = false;
         long n = dividend;
         long m = divisor;
-        n = abs(n);
-        m = abs(m);
+        n = labs(n);
+        m = labs(m);
         long ans =0;
         while(n>=m){
             int count = 0;
-            while(n > (m<<(count+1))){
+            while(n >= (m<<(count+1))){
                 count++;
             }
 
@@ -22,8 +22,8 @@ public:
         }
 
 
-        if((ans>(1>>31)) && sign) return ans;
-        if((ans>=(1>>31)) && !sign) return -ans;
+        // if((ans>(1<<31)) && sign) return ans;
+        // if((ans>=(1<<31)) && !sign) return -ans;
 
         if(!sign){
             ans = -ans;
