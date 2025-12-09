@@ -12,26 +12,15 @@ public:
 
         int ans =0;
         for(int i=0;i<s.size();i++){
-            // cout<<i<<" "<<ans<<endl;
-            // cout<<ans<<endl;
             char a = s[i];
             char b = s[i+1];
             if(RTI[a]<RTI[b]){
                 ans = ans+RTI[b]-RTI[a];
                 i++;
                 continue;
-
-                
-                
             }
-            
-
-            
-
-            ans = ans+RTI[a];
-            cout<<i<<" "<<ans<<endl;
+            ans = ans+RTI[a];     
         }
-        cout<<ans;
         return ans;
     }
 };
