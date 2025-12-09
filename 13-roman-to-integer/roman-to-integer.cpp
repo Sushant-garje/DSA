@@ -11,15 +11,15 @@ public:
         RTI['M'] = 1000;
 
         int ans =0;
-        for(int i=0;i<s.size();i++){
-            char a = s[i];
-            char b = s[i+1];
-            if(RTI[a]<RTI[b]){
-                ans = ans+RTI[b]-RTI[a];
-                i++;
-                continue;
+        for (int i = 0; i < s.size(); i++) {
+            int curr = RTI[s[i]];
+
+            if (i + 1 < s.size() && curr < RTI[s[i + 1]]) {
+                ans += RTI[s[i + 1]] - curr;
+                i++; 
+            } else {
+                ans += curr;
             }
-            ans = ans+RTI[a];     
         }
         return ans;
     }
