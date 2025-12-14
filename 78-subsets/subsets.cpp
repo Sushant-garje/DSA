@@ -5,10 +5,11 @@ public:
              ans.push_back(arr);
              return ;
             }
+        
+        Possiblesets(nums,n,idx+1,arr,ans);
         arr.push_back(nums[idx]);
         Possiblesets(nums,n,idx+1,arr,ans);
         arr.pop_back();
-        Possiblesets(nums,n,idx+1,arr,ans);
 
         }
     
