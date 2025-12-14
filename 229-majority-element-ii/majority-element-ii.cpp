@@ -10,7 +10,6 @@ public:
         for (auto i = map.begin(); i != map.end(); i++){
             if(i->second>k) ans.push_back(i->first);
         }
-        // cout << i->first << "       " << i->second << endl;
         return ans;
         
     }
