@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void Possiblesets(vector<int> nums, int n,int idx,vector<int> &arr,vector<vector<int>> &ans){
+    void Possiblesets(vector<int> &nums, int n,int idx,vector<int> &arr,vector<vector<int>> &ans){
         if(idx>=n){
              ans.push_back(arr);
              return ;
