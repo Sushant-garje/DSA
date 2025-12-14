@@ -1,22 +1,24 @@
 class Solution {
 public:
-    vector<vector<int>> subsets(vector<int>& nums) {
-        vector<vector<int>> ans;
-        int n = nums.size();
-        for(int i =0;i<(1<<n);i++){
-            vector<int> temp ;
-            for(int j=0;j<n;j++){
-                
-                if((i & (1<<j))!= 0){
-                    temp.push_back(nums[j]);
-                }
-                
-                
+    void Possiblesets(vector<int> nums, int n,int idx,vector<int> &arr,vector<vector<int>> &ans){
+        if(idx>=n){
+             ans.push_back(arr);
+             return ;
             }
-            ans.push_back(temp);
-            
-        }
+        arr.push_back(nums[idx]);
+        Possiblesets(nums,n,idx+1,arr,ans);
+        arr.pop_back();
+        Possiblesets(nums,n,idx+1,arr,ans);
 
+        }
+    
+public:
+
+    vector<vector<int>> subsets(vector<int>& nums) {
+        int n = nums.size();
+        vector<vector<int>> ans = {};
+        vector<int> arr = {};
+        Possiblesets(nums,n,0,arr,ans);
         return ans;
         
     }
