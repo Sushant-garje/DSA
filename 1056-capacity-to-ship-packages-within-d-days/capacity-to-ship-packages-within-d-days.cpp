@@ -36,7 +36,7 @@ public:
         int en =arrinfo(weights)[1];
         while(st<=en){
             int mid = st+(en-st)/2;
-            cout<<st<<" "<<en<<" "<<" "<<mid<<" "<<capacity(weights,mid)<<endl;
+
             if(capacity(weights,mid)==days){
                 en = mid-1;
             }
