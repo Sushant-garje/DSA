@@ -37,15 +37,13 @@ public:
         while(st<=en){
             int mid = st+(en-st)/2;
 
-            if(capacity(weights,mid)==days){
+            if(capacity(weights,mid)<=days){
                 en = mid-1;
             }
-            else if(capacity(weights,mid)>days){
+            else {
                 st = mid+1;
             }
-            else{
-                en = mid-1;
-            }
+            
         }
 
         return st;
