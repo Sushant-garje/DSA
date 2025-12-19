@@ -28,21 +28,15 @@ public:
         if(m > bloomDay.size()/k) return -1;
         int st = 1;
         int en = arrmax(bloomDay);
-        int ans = -1;
         while(st<=en){
             int mid = st+(en-st)/2;
-            int bouquet = check(bloomDay,mid,k);
-            if(bouquet>=m){
+            if(check(bloomDay,mid,k)>=m){
                 en = mid-1;
-                ans = mid;
-                cout<<ans<<endl;
             }
             else{
                 st = mid+1;
             }
         }
-        return ans;
-
-        
+        return st;
     }
 };
