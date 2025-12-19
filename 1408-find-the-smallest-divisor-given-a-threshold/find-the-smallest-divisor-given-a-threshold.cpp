@@ -23,9 +23,10 @@ public:
         }
         return sum<=threshold;
     }
-    int smallestDivisor(vector<int>& nums, int threshold) {
+    int smallestDivisor(vector<int>& nums, int threshold) { 
         int st = 1;
         int en = arrmax(nums);
+        if(nums.size()==threshold) return en;
         while(st<=en){
             int mid = st+(en-st)/2;
             if(divisionsum(nums,mid,threshold)){
