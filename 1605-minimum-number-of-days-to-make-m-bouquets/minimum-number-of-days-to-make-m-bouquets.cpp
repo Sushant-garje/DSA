@@ -17,25 +17,21 @@ public:
                     ans++;
                     r=0;
                 }
-
             }else{
                 r=0;
             }
-
         }
-
         return ans;
     }
 
     int minDays(vector<int>& bloomDay, int m, int k) {
         if(m > bloomDay.size()/k) return -1;
-        int st = *min_element(bloomDay.begin(), bloomDay.end());
-        int en = *max_element(bloomDay.begin(), bloomDay.end());
+        int st = 1;
+        int en = arrmax(bloomDay);
         int ans = -1;
         while(st<=en){
             int mid = st+(en-st)/2;
             int bouquet = check(bloomDay,mid,k);
-            cout<<mid<<" "<<bouquet<<" ";
             if(bouquet>=m){
                 en = mid-1;
                 ans = mid;
@@ -44,10 +40,7 @@ public:
             else{
                 st = mid+1;
             }
-            cout<<endl;
         }
-        
-
         return ans;
 
         
