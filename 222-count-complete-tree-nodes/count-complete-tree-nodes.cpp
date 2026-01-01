@@ -12,21 +12,33 @@
 class Solution {
 public:
     int countNodes(TreeNode* root) {
-        int ans=0;
-        if(!root) return ans;
-        queue<TreeNode*> q;
-        q.push(root);
-        while(!q.empty()){
-            int size = q.size();
-            ans +=size;
-            for(int i=0;i<size;i++){
-                TreeNode* temp = q.front();
-                q.pop();
-                if(temp->left) q.push(temp->left);
-                if(temp->right) q.push(temp->right);
-            }
+        if(!root) return 0;
+        int dleft = ldepth(root->left);
+        int dright = rdepth(root->right);
+        if(dleft==dright){
+            return (2<<dleft)-1;
         }
-        return ans;
-        
+        return 1 + countNodes(root->left) + countNodes(root->right);   
+    }
+
+    int ldepth(TreeNode* root){
+        if(!root) return 0;
+        int h =0;
+        TreeNode* temp = root;
+        while(temp){
+            h++;
+            temp = temp->left;
+        }
+        return h;
+    }
+    int rdepth(TreeNode* root){
+        if(!root) return 0;
+        int h =0;
+        TreeNode* temp = root;
+        while(temp){
+            h++;
+            temp = temp->right;
+        }
+        return h;
     }
 };
