@@ -13,10 +13,10 @@ class Solution {
 public:
     int countNodes(TreeNode* root) {
         if(!root) return 0;
-        int dleft = ldepth(root->left);
-        int dright = rdepth(root->right);
+        int dleft = ldepth(root);
+        int dright = rdepth(root);
         if(dleft==dright){
-            return (2<<dleft)-1;
+            return (1<<dleft)-1;
         }
         return 1 + countNodes(root->left) + countNodes(root->right);   
     }
