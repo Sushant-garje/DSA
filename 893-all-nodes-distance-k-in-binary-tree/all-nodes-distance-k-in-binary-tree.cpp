@@ -32,7 +32,7 @@ public:
         vector<int> ans;
         map<TreeNode*,TreeNode*> par;
         track_par(root,par);
-        map<TreeNode*,bool> visited;
+        unordered_map<TreeNode*,bool> visited;
         queue<TreeNode*> q;
         q.push(target);
         visited[target] = true;
