@@ -20,8 +20,8 @@ public:
             TreeNode* temp = q.front();
             q.pop();
             if(!temp) {ans +="#,"; continue;}
-            ans +=to_string(temp->val);
-            ans+=',';
+            ans.append(to_string(temp->val));
+            ans.push_back(',');
             q.push(temp->left); 
             q.push(temp->right); 
            
