@@ -20,7 +20,7 @@ public:
             TreeNode* temp = q.front();
             q.pop();
             if(!temp) {ans +="#,"; continue;}
-            ans = ans+to_string(temp->val);
+            ans +=to_string(temp->val);
             ans+=',';
             q.push(temp->left); 
             q.push(temp->right); 
