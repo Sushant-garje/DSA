@@ -22,7 +22,7 @@ public:
         if(!root) return;
         inorder(root->left,ans,k,count);
         count++;
-        if(count==k) ans = root->val;
+        if(count==k) {ans = root->val;return ;}
         inorder(root->right,ans,k,count);
 
     }
