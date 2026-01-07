@@ -22,11 +22,10 @@ public:
     }
 
     BSTIterator(TreeNode* root) {
-        if(!root) return;
+       
        
         pushall(root);
     }
-    
     int next() {
         TreeNode* ans = st.top();
         st.pop();
@@ -35,10 +34,9 @@ public:
         return ans->val;
         
     }
-    
     bool hasNext() {
-        if(!st.empty()) return true;
-        return false;
+        
+        return !st.empty();
     }
 };
 
