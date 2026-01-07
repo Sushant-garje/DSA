@@ -22,7 +22,7 @@ public:
     }
 
     BSTIterator(TreeNode* root) {
-        
+        if(!root) return;
        
         pushall(root);
     }
