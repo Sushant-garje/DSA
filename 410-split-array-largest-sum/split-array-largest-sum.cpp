@@ -27,7 +27,6 @@ public:
         return split<=k;
     }
     int splitArray(vector<int>& nums, int k) {
-        // sort(nums.begin(),nums.end());
         // pair<int,int> p = arrinfo(nums);
         // int sn = p.first;   // max
         // int en = p.second;  // sum
